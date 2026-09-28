@@ -1,1 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Rakshith K R | Embedded Systems & Power Electronics</title>
+
+    <meta name="description"
+          content="Technical portfolio of Rakshith K R — Electrical & Electronics Engineering student focused on Embedded Systems, Power Electronics, Battery Systems and Hardware Design.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0a0f18;
+            color: #e8edf5;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 15, 24, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #1d2735;
+        }
+
+        .nav-inner {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #5da9ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            font-size: 14px;
+            color: #aeb9c9;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            color: #5da9ff;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(44px, 7vw, 82px);
+            line-height: 1.02;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            color: #5da9ff;
+        }
+
+        .hero-description {
+            max-width: 720px;
+            font-size: 19px;
+            color: #aeb9c9;
+            margin-bottom: 35px;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+
+        .tag {
+            border: 1px solid #263449;
+            background: #101824;
+            padding: 8px 13px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #cbd5e1;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 22px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid #334155;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: #5da9ff;
+            color: #07111e;
+            border-color: #5da9ff;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary:hover {
+            border-color: #5da9ff;
+            color: #5da9ff;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 0;
+            border-top: 1px solid #182230;
+        }
+
+        .section-label {
+            color: #5da9ff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 18px;
+        }
+
+        .section-intro {
+            max-width: 720px;
+            color: #9eabba;
+            margin-bottom: 45px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 60px;
+        }
+
+        .about-text p {
+            color: #aeb9c9;
+            margin-bottom: 18px;
+        }
+
+        .about-details {
+            border-left: 1px solid #263449;
+            padding-left: 30px;
+        }
+
+        .detail {
+            margin-bottom: 25px;
+        }
+
+        .detail-title {
+            color: #77869b;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .detail-value {
+            color: #e8edf5;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            background: #0f1722;
+            border: 1px solid #202d3e;
+            padding: 28px;
+            border-radius: 10px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 14px;
+            font-size: 18px;
+        }
+
+        .skill-card p {
+            color: #9eabba;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            gap: 25px;
+        }
+
+        .project {
+            background: #0f1722;
+            border: 1px solid #202d3e;
+            border-radius: 12px;
+            padding: 32px;
+            transition: 0.25s;
+        }
+
+        .project:hover {
+            transform: translateY(-4px);
+            border-color: #36506f;
+        }
+
+        .project-number {
+            color: #5da9ff;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .project h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            color: #9eabba;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech {
+            background: #151f2d;
+            border: 1px solid #27364a;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #b9c6d8;
+        }
+
+        /* RESEARCH */
+
+        .research-box {
+            border-left: 3px solid #5da9ff;
+            background: #0f1722;
+            padding: 28px 30px;
+        }
+
+        .research-box h3 {
+            margin-bottom: 10px;
+        }
+
+        .research-box p {
+            color: #9eabba;
+        }
+
+        /* EXPERIENCE */
+
+        .timeline {
+            border-left: 1px solid #334155;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -36px;
+            top: 7px;
+            width: 10px;
+            height: 10px;
+            background: #5da9ff;
+            border-radius: 50%;
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            color: #9eabba;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            background: #0f1722;
+            border: 1px solid #202d3e;
+            border-radius: 12px;
+            padding: 45px;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: #9eabba;
+            margin-bottom: 28px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-link {
+            border: 1px solid #2a394d;
+            padding: 10px 18px;
+            border-radius: 6px;
+            color: #c9d4e2;
+        }
+
+        .contact-link:hover {
+            border-color: #5da9ff;
+            color: #5da9ff;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #182230;
+            padding: 30px 0;
+            color: #68778b;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 760px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .about-details {
+                border-left: none;
+                border-top: 1px solid #263449;
+                padding-left: 0;
+                padding-top: 25px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="container nav-inner">
+
+        <div class="logo">
+            Rakshith<span>.</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Electrical & Electronics Engineering
+            </div>
+
+            <h1>
+                Rakshith <span>K R</span>
+            </h1>
+
+            <p class="hero-description">
+                Engineering student focused on Embedded Systems,
+                Power Electronics, Battery Systems and Hardware Design.
+                Building practical solutions through electronics,
+                firmware, simulation and system-level development.
+            </p>
+
+            <div class="hero-tags">
+                <span class="tag">Embedded Systems</span>
+                <span class="tag">Power Electronics</span>
+                <span class="tag">Battery Systems</span>
+                <span class="tag">Hardware Design</span>
+            </div>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    Explore Projects
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-label">01 — About</div>
+
+        <h2 class="section-title">
+            Engineering with a practical focus.
+        </h2>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I am an Electrical & Electronics Engineering undergraduate
+                    at Malnad College of Engineering, focused on developing
+                    practical skills in embedded systems, power electronics,
+                    battery management and electronic hardware.
+                </p>
+
+                <p>
+                    My technical work combines circuit design, embedded
+                    firmware, sensors, power electronics, simulation and
+                    hardware testing. I am particularly interested in
+                    technologies related to intelligent energy systems,
+                    electric mobility and embedded control.
+                </p>
+
+                <p>
+                    I use engineering tools and hands-on experimentation
+                    to move from a system concept to a working prototype
+                    and measurable results.
+                </p>
+
+            </div>
+
+            <div class="about-details">
+
+                <div class="detail">
+                    <div class="detail-title">Education</div>
+                    <div class="detail-value">
+                        B.E. — Electrical & Electronics Engineering
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <div class="detail-title">Institution</div>
+                    <div class="detail-value">
+                        Malnad College of Engineering
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <div class="detail-title">Expected Graduation</div>
+                    <div class="detail-value">
+                        2027
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <div class="detail-title">Primary Focus</div>
+                    <div class="detail-value">
+                        Embedded Systems & Power Electronics
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-label">02 — Technical Expertise</div>
+
+        <h2 class="section-title">
+            Tools & technologies
+        </h2>
+
+        <p class="section-intro">
+            A practical engineering skill set spanning embedded hardware,
+            power electronics, circuit design and simulation.
+        </p>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>Embedded Systems</h3>
+                <p>
+                    STM32 • ESP32 • Embedded C • ADC • Sensor Interfacing
+                    • UART • I²C • SPI • BLE
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Power Electronics</h3>
+                <p>
+                    DC-DC Converters • Inverters • MOSFETs •
+                    Battery Systems • BMS • Power Semiconductor Fundamentals
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Hardware Design</h3>
+                <p>
+                    Circuit Design • PCB Design • Analog Signal Conditioning
+                    • Sensor Interfaces • KiCad • EasyEDA
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Simulation & Development</h3>
+                <p>
+                    MATLAB/Simulink • LTspice • Proteus •
+                    STM32CubeIDE • STM32CubeMX • Arduino IDE
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-label">03 — Projects</div>
+
+        <h2 class="section-title">
+            Selected technical work
+        </h2>
+
+        <p class="section-intro">
+            Engineering projects involving embedded systems, battery
+            management and power electronics.
+        </p>
+
+
+        <div class="projects">
+
+            <!-- PROJECT 01 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>
+                    AI-Optimized Ultra-Low-Power Per-Cell Battery Management System
+                </h3>
+
+                <p class="project-description">
+                    Battery management system focused on per-cell monitoring,
+                    battery health assessment and predictive fault detection
+                    for electric two-wheelers. The system combines cell-level
+                    measurements, temperature and current information with
+                    embedded processing and machine-learning-based analysis.
+                </p>
+
+                <div class="tech-stack">
+
+                    <span class="tech">STM32</span>
+                    <span class="tech">BMS</span>
+                    <span class="tech">Battery Monitoring</span>
+                    <span class="tech">Embedded C</span>
+                    <span class="tech">AI / ML</span>
+                    <span class="tech">Sensors</span>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 02 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    Non-Isolated High-Gain DC-DC Converter Simulation
+                </h3>
+
+                <p class="project-description">
+                    Simulation and analysis of a non-isolated high-gain
+                    DC-DC converter topology, including switching behaviour,
+                    semiconductor selection, duty-cycle operation and
+                    steady-state output analysis.
+                </p>
+
+                <div class="tech-stack">
+
+                    <span class="tech">MATLAB/Simulink</span>
+                    <span class="tech">LTspice</span>
+                    <span class="tech">Power Electronics</span>
+                    <span class="tech">MOSFET</span>
+                    <span class="tech">DC-DC Converter</span>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 03 -->
+
+            <article class="project">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>
+                    Embedded Hardware & Sensor Interface Development
+                </h3>
+
+                <p class="project-description">
+                    Practical embedded hardware development involving
+                    microcontrollers, ADC-based measurement, voltage and
+                    current sensing, temperature sensing and hardware
+                    interfacing.
+                </p>
+
+                <div class="tech-stack">
+
+                    <span class="tech">STM32</span>
+                    <span class="tech">ESP32</span>
+                    <span class="tech">ADC</span>
+                    <span class="tech">INA226</span>
+                    <span class="tech">NTC</span>
+                    <span class="tech">Embedded C</span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RESEARCH -->
+
+<section id="research">
+
+    <div class="container">
+
+        <div class="section-label">04 — Research & Technical Work</div>
+
+        <h2 class="section-title">
+            Research interests
+        </h2>
+
+        <p class="section-intro">
+            Exploring power conversion, battery systems and practical
+            applications of intelligent electronics.
+        </p>
+
+        <div class="research-box">
+
+            <h3>
+                Power Electronics & Energy Conversion
+            </h3>
+
+            <p>
+                Technical study of non-isolated DC-DC converter topologies,
+                high-gain conversion techniques, power semiconductor
+                behaviour and converter performance.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-label">05 — Experience & Leadership</div>
+
+        <h2 class="section-title">
+            Technical involvement
+        </h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <h3>
+                    IEEE PELS Student Branch Chapter — Secretary
+                </h3>
+
+                <p>
+                    Involved in technical activities and student
+                    engagement related to power electronics and
+                    electrical engineering.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <h3>
+                    Electrical & Electronics Engineering Undergraduate
+                </h3>
+
+                <p>
+                    Developing practical experience through academic
+                    projects, embedded hardware development, simulations,
+                    electronics experimentation and technical research.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h2>
+                Let's connect.
+            </h2>
+
+            <p>
+                Interested in engineering, embedded systems,
+                power electronics and hardware development?
+            </p>
+
+            <div class="contact-links">
+
+                <a class="contact-link"
+                   href="mailto:aryaaam52141@gmail.com">
+                    Email
+                </a>
+
+                <a class="contact-link"
+                   href="https://github.com/Rakshith-R-24"
+                   target="_blank">
+                    GitHub
+                </a>
+
+                <a class="contact-link"
+                   href="https://www.linkedin.com/in/rakshith-k-r-2b2772290/"
+                   target="_blank">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        © 2026 Rakshith K R · Technical Portfolio
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
